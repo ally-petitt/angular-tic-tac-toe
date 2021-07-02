@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'themes';
+
+@import '~@nebular/theme/styles/globals';
+
+@include nb-install() {
+  @include nb-theme-global();
+};
+
+#btn:active,
+#btn:focus,
+#btn:focus:active {
+  outline: 0;
+  box-shadow: none;
+}

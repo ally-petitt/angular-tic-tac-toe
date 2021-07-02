@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class BoardComponent implements OnInit {
   squares: any[];
   xIsNext: boolean;
+  wasTie: boolean;
 
   constructor() { }
 
@@ -51,7 +52,15 @@ export class BoardComponent implements OnInit {
       ) {
         return this.squares[a];
       }
+      this.wasTie = this.checkTie();
     }
     return null;
+  }
+
+  checkTie() {
+    if (!this.squares.includes(null) && this.winner === null) {
+      return true;
+    }
+    return false;
   }
 }
