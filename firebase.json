@@ -1,0 +1,33 @@
+{
+  "hosting": [
+    {
+      "firebase": "Angular Tic-Tac-Toe",
+      "target": "tic-tac-toe-angular",
+      "public": "dist/tic-tac-toe-angular",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "headers": [
+        {
+          "source": "*.[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f].+(css|js)",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public,max-age=31536000,immutable"
+            }
+          ]
+        }
+      ],
+      "rewrites": [{
+          "source": "/public/**",
+          "destination": "/public.html"
+        },
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }]
+    }
+  ]
+}

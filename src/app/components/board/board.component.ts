@@ -19,6 +19,7 @@ export class BoardComponent implements OnInit {
   newGame() {
     this.squares = Array(9).fill(null);
     this.xIsNext = true;
+    document.getElementById("winner").style.visibility = "hidden";
   }
 
   get player() {
@@ -50,10 +51,11 @@ export class BoardComponent implements OnInit {
         this.squares[a] && this.squares[a] === this.squares[b] &&
         this.squares[a] === this.squares[c]
       ) {
+        document.getElementById("winner").style.visibility = "visible";
         return this.squares[a];
       }
-      this.wasTie = this.checkTie();
     }
+    this.wasTie = this.checkTie();
     return null;
   }
 
