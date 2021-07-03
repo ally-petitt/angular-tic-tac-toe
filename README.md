@@ -2,7 +2,7 @@
 
 My first web application using Angular. Features the dark color theme from the Nebular library.
 
-You can find is [here](https://angular-tic-tac-toe-caf79.web.app/)
+You can find it [here](https://angular-tic-tac-toe-caf79.web.app/)
 
 (It also functions as a PWA)
 
