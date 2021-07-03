@@ -19,6 +19,9 @@ export class BoardComponent implements OnInit {
     this.squares = Array(9).fill(null);
     this.xIsNext = true;
     document.getElementById("winner").style.visibility = "hidden";
+
+    var squareBtns = document.querySelectorAll("app-square");
+    squareBtns.forEach(square => square.classList.remove("disabled"))
   }
 
   get player() {
@@ -51,6 +54,7 @@ export class BoardComponent implements OnInit {
         this.squares[a] === this.squares[c]
       ) {
         document.getElementById("winner").style.visibility = "visible";
+        this.stopGame();
         return this.squares[a];
       }
     }
@@ -62,5 +66,10 @@ export class BoardComponent implements OnInit {
       return true;
     }
     return false;
+  }
+
+  stopGame() {
+    var squareBtns = document.querySelectorAll("app-square");
+    squareBtns.forEach(square => square.classList.add("disabled"))
   }
 }

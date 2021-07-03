@@ -19,3 +19,11 @@ app-square {
   justify-content: center;
   align-items: center;
 }
+
+#winner {
+  visibility: hidden;
+}
+
+.disabled {
+  pointer-events: none;
+}
