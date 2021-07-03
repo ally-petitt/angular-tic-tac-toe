@@ -2,11 +2,9 @@
 
 <button id="btn" nbButton outline status="danger" (click)="newGame()">New Game</button>
 
-<h2 id="winner">
-  {{ winner }} has won the game!
-</h2>
-<h2 *ngIf="wasTie">
-  It was a tie
+<h2 id="result">
+  <span id="winner" *ngIf="!wasTie">{{ winner }} has won the game!</span>
+  <span *ngIf="wasTie">There was a tie</span>
 </h2>
 
 
