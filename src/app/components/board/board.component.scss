@@ -1,13 +1,27 @@
 main {
   display: grid;
-  grid-template-columns: repeat(3, 200px);
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
   grid-gap: 0px;
   max-width: 600px;
+  width: 80vw;
 }
+
+main::before {
+  content: "";
+  width: 0px;
+  padding-bottom: 100%;
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+}
+
+main > *:first-child {
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+}
+
 
 app-square {
   border: 1px gray solid;
-  height: 200px;
 }
 
 #btn {

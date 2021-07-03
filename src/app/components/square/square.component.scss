@@ -10,3 +10,9 @@
   padding: 0;
   color: black;
 }
+
+@media (max-width: 589px) {
+  #btn {
+    font-size: 60px;
+  }
+}
